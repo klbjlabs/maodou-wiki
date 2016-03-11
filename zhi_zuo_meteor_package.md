@@ -1,19 +1,21 @@
-# Meteor Package 制作
+# 制作 Meteor Package
 ---
 
-#### 第一步 申请开发者账号
-http://meteor.com
+#### 申请开发者账号
+  [atmospherejs.com](https://atmospherejs.com/)
+
+
 
 #### 创建包结构
-```
-meteor create --package jiatian:test
+``` bash
+meteor create --package jiatian:test       # 用户名:包名
 ```
 
 
 #### 包发布到 ATMOSPHERE
-```
-meteor publish --create	// 第一次发布时使用
-meteor publish             // 之后每次执行这个即可
+``` bash
+meteor publish --create	# 第一次发布时使用
+meteor publish             # 之后每次更新版本可以直接发布
 ```
 
 #### 隐藏包
@@ -27,6 +29,7 @@ meteor admin set-unmigrated klbjlabs:test
 meteor update --packages-only
 ```
 
+#### 包结构
 ```js
 package.js
 
@@ -42,19 +45,19 @@ Package.describe({
 /* 包信息的设定 */
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');			// 包所支持Meteor的最低版本
-  api.use('ecmascript');			// 依赖包
+  api.use('ecmascript');			    // 依赖包
   api.use('iron:router@1.0.12', ["server", "client"]);	// 带版本的依赖包格式
 
   api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');	// mongo and template
 
   // ls -l | awk '{print "api.addFiles(\""$9"\", \"client\");"}'
-  api.addFiles('client/routes.js', 'client');			// 添加文件
+  api.addFiles('client/routes.js', 'client');			   // 添加文件
   api.addFiles("client/posts/post_edit.html", "client");	// Client
-  api.addFiles("lib/collections.js");				// Both
-  api.addFiles("server/publications.js", "server");		// Server
+  api.addFiles("lib/collections.js");				       // Both
+  api.addFiles("server/publications.js", "server");		 // Server
 
   api.export('Posts');	// 数据库
 });
 ```
-#####参考文献:
+##### 相关资料:
 * [Discover Meteor](http://zh.discovermeteor.com/chapters/creating-a-meteor-package/)
