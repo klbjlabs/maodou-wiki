@@ -1,28 +1,33 @@
 # Meteor Package 制作
+---
 
-Meteor Package 制作
-
-
-
-
-申请开发者账号
+#### 第一步 申请开发者账号
 http://meteor.com
 
-创建包结构
+#### 创建包结构
+```
 meteor create --package jiatian:test
+```
 
-包发布到 ATMOSPHERE
+
+#### 包发布到 ATMOSPHERE
+```
 meteor publish --create	// 第一次发布时使用
-meteor publish			// 之后每次执行这个即可
+meteor publish             // 之后每次执行这个即可
+```
 
-隐藏包
+#### 隐藏包
+```
 /＊ 该包会被标记小红旗在下一个版本发布后取消标记＊／
 meteor admin set-unmigrated klbjlabs:test
+```
 
-
-升级包
+#### 升级包
+```
 meteor update --packages-only
+```
 
+```js
 package.js
 
 /* 包信息的设定 */
@@ -50,6 +55,6 @@ Package.onUse(function(api) {
 
   api.export('Posts');	// 数据库
 });
-
+```
 #####参考文献:
-[http://zh.discovermeteor.com/chapters/creating-a-meteor-package/](http://zh.discovermeteor.com/chapters/creating-a-meteor-package/)
+* [Discover Meteor](http://zh.discovermeteor.com/chapters/creating-a-meteor-package/)
