@@ -1,14 +1,26 @@
 # 制作 Meteor Package
 ---
 
-#### 申请开发者账号
+#### 1.申请开发者账号
   [atmospherejs.com](https://atmospherejs.com/)
+>  在制作 meteor 自定义包之前，你首先要注册一个 atmospherejs 的账号，这个账号与 meteor 官方账号是通用的。这样你才能把你的包发布到网络上，自己或者他人才能使用 meteor add 方式添加你的包到项目中。
+
+#### 2. 登陆 atomspherejs 账号
+
+>  注册完 atmospherejs 的账号后，你需要在终端下登陆你的账号，这样创建包时程序才知道你提交的包归属与哪个作者。
+
+  ``` bash
+  $ meteor login     
+  Username: klbjlabs
+  Password:                                     
+  Logged in as klbjlabs. Thinks...
+  ```
 
 
 
 #### 创建包结构
 ``` bash
-meteor create --package jiatian:test       # 用户名:包名
+meteor create --package klbjlabs:test       # 用户名:包名
 ```
 
 
