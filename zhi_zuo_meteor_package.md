@@ -5,7 +5,7 @@
   [atmospherejs.com](https://atmospherejs.com/)
 >  在制作 meteor 自定义包之前，你首先要注册一个 atmospherejs 的账号，这个账号与 meteor 官方账号是通用的。这样你才能把你的包发布到网络上，自己或者他人才能使用 meteor add 方式添加你的包到项目中。
 
-#### 2. 登陆 atomspherejs 账号
+#### 2. 登陆在atomspherejs 账号
 
 >  注册完 atmospherejs 的账号后，你需要在终端下登陆你的账号，这样创建包时程序才知道你提交的包归属与哪个作者。
 
@@ -47,14 +47,14 @@ package.js
 
 /* 包信息的设定 */
 Package.describe({
-  name: 'klbjlabs:test',
-  version: '0.0.1',
-  summary: ‘Just test’,
-  git: 'https://github.com/klbjlabs/klbjlabs-test',
-  documentation: 'README.md'
+  name: 'klbjlabs:test',            // 包的名字
+  version: '0.0.1',                 // 版本号
+  summary: ‘Just test’,             // 
+  git: 'https://github.com/klbjlabs/klbjlabs-test',  // 对应的 github 地址
+  documentation: 'README.md'                         // 可以将 README 显示在atomsphere上
 });
 
-/* 包信息的设定 */
+/* 包的依赖环境 */
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');			// 包所支持Meteor的最低版本
   api.use('ecmascript');			    // 依赖包
@@ -72,4 +72,6 @@ Package.onUse(function(api) {
 });
 ```
 ##### 相关资料:
-* [Discover Meteor](http://zh.discovermeteor.com/chapters/creating-a-meteor-package/)
+* [**Discover Meteor**](http://zh.discovermeteor.com/chapters/creating-a-meteor-package/)
+* [**The Meteor Chef**: Writing a Package](https://themeteorchef.com/recipes/writing-a-package/)
+* [**邓佳的笔记**](https://github.com/nmgwddj/meteor-notes/blob/master/02_meteor%20Package%20%E5%88%B6%E4%BD%9C.md)
