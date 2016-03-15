@@ -1,9 +1,8 @@
 # 使用settings.json
 
 
-`settings.json`
-
 ```json
+// settings.json
 {
   "somePrivateKey": "123456789",
   "public": {
