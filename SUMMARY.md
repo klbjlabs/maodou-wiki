@@ -6,4 +6,5 @@
 * [计时器 Interval 方法](MeteorTimers_interval.md)
 * [使用settings.json](Making_use_of_settingJson.md)
 * [git](git)
+   * .gitignore
 
