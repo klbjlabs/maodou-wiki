@@ -5,3 +5,22 @@
 ```
 meteor add tmeasday:publish-counts
 ```
+
+### Server
+```
+Meteor.publish('publication', function() {
+   Counts.publish(this, 'numberOfPosts', Posts.find());
+   Counts.publish(this, 'numberOfUsers', Users.find());
+});
+```
+
+### Client
+```
+Meteor.subscribe('publication')
+```
+获取count
+```
+Counts.get('numberOfUsers')
+```
+
+相关资料
